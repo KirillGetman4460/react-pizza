@@ -1,0 +1,81 @@
+{
+  
+    "product":[
+        {
+            "title":"Чизбургер-пицца",
+            "price":395,
+            "image":"./images/pizza.png",
+            "category":"Мясные",
+            "id":1,
+            "qty":1,
+            "rating":1
+        },
+        {
+            "title":"Сырная",
+            "price":450,
+            "image":"./images/pizza2.png",
+            "category":"Вегетарианская",
+            "id":2,
+            "qty":1,
+            "rating":4
+            
+        },
+        {
+            "title":"Креветки по-азиатски",
+            "price":290,
+            "image":"./images/pizza3.png",
+            "category":"Гриль",
+            "id":3,
+            "qty":1,
+            "rating":5
+        },
+        {
+            "title":"Сырный цыпленок",
+            "price":385,
+            "image":"./images/pizza4.png",
+            "category":"Острые",
+            "id":4,
+            "qty":1,
+            "rating":3
+        },
+        {
+            "title":"Чизбургер-пицца",
+            "price":340,
+            "image":"./images/pizza.png",
+            "category":"Закрытые",
+            "id":5,
+            "qty":1,
+            "rating":4
+        },
+        {
+            "title":"Сырная",
+            "price":440,
+            "image":"./images/pizza2.png",
+            "category":"Грилье",
+            "id":6,
+            "qty":1,
+            "rating":2
+        },
+        {
+            "title":"Креветки по-азиатски",
+            "price":270,
+            "image":"./images/pizza3.png",
+            "category":"Мясные",
+            "id":7,
+            "qty":1,
+            "rating":5
+        },
+        {
+            "title":"Сырный цыпленок",
+            "price":380,
+            "image":"./images/pizza4.png",
+            "category":"Мясные",
+            "id":8,
+            "qty":1,
+            "rating":3
+        }
+
+       
+    ]
+
+}
