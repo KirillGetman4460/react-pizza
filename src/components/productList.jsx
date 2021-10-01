@@ -56,7 +56,7 @@ const ProductList = () => {
         console.log(types);
     }
 
-
+    console.log(123);
 
     useEffect(() => {     
         getPosts();
