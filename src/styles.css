@@ -170,7 +170,9 @@ font-weight: 800;
 .addBtn:hover .addBtn__title{
     color: #fff;
 }
-
+.addBtn:hover svg path{
+    fill: white;
+}
 .addBtn__title{
     padding-left: 7px;
     font-weight: bold;

@@ -1,13 +1,12 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import classNames from 'classnames';
-import { Link } from "react-router-dom";
 const Filter = (props)=>{
 
-    const {selectCategory,selectTypes,getPosts,sortProducts} = props;
+    const {selectCategory,getPosts,sortProducts} = props;
 
     const [listSelect,setListSelect] = useState(['популярности','по цене','по алфавиту']);
 
-    const [categories,setCategories] = useState(['Мясные','Вегетарианская','Гриль','Острые','Закрытые'])
+    const [categories,setCategories] = useState(["Все",'Мясные','Вегетарианская','Гриль','Острые','Закрытые'])
 
     const [optionsSort,setOptionsSort] = useState(listSelect[0])
 
@@ -20,7 +19,7 @@ const Filter = (props)=>{
 
     const activeLink = (i,item)=>{    
         setActiveCategory(i)
-
+        sortProducts(item)
     }
 
     const toogle = () =>{
@@ -34,17 +33,20 @@ const Filter = (props)=>{
         setActive(false)
     }
 
+    useEffect(()=>{
+        if(activeCategory === 0){
+            getPosts();
+        }
+    },[activeCategory])
+
     return (
         <div className="filter">
             <div className="filter__conteiner">
 
             <ul className="filter__list">
-                <li className="filter__list__link " onClick={()=> getPosts()}>
-                    Все
-                </li>
                 {categories.map((item,i) =>
-                    <li className="filter__list__link" onClick={()=> sortProducts(item)}>
-                        <span onClick={()=> activeLink(i)}>
+                    <li className={"filter__list__link " + classNames({active: activeCategory === i,})} onClick={()=> activeLink(i,item)}>
+                        <span>
                             {item}
                         </span>
                     </li>

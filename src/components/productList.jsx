@@ -7,10 +7,7 @@ import axios from "axios";
 
 const ProductList = () => {
 
-
     const [posts, setPosts] = useState([]);
-
-    const [categories,setCategories] = useState(['Мясные','Вегетарианская','Гриль','Острые','Закрытые'])
 
     const getPosts = async()=>{
         await axios.get('http://localhost:3000/product')
@@ -25,8 +22,6 @@ const ProductList = () => {
     }
 
     const [choiceOptions,setChoiceOptions] = useState();
-
-    const [types,setTypes] = useState();
 
     //redux action
     const dispatch = useDispatch();
@@ -51,13 +46,6 @@ const ProductList = () => {
         setChoiceOptions(category)
     }
 
-    const selectTypes = (types)=>{      
-        setTypes(types)
-        console.log(types);
-    }
-
-   
-
     useEffect(() => {     
         getPosts();
     },[])
@@ -70,11 +58,10 @@ const ProductList = () => {
 
     },[choiceOptions])
 
-
     return(
         
     <div className="product__conteiner">
-    <Filter selectCategory={selectCategory} selectTypes={selectTypes} getPosts={getPosts} sortProducts={sortProducts}/>   
+    <Filter selectCategory={selectCategory} getPosts={getPosts} sortProducts={sortProducts}/>   
         <div className="product__title">
             Все пиццы
         </div>  
@@ -84,33 +71,6 @@ const ProductList = () => {
             )}
         </div>      
     </div>
-       /* <div className="product__conteiner">
-            
-            
-            
-             <Filter selectCategory={selectCategory} selectTypes={selectTypes}/>
-             <Link to={`${url}item`}>
-                item
-            </Link>
-
-             <Switch>
-        <Route exact path={path}>
-        <div className="product__title">
-                Все пиццы
-            </div>      
-            <div className="product__list">               
-            {posts.map(post =>
-                <ProductItem post={post} addToBasket={addToBasket}/>,
-            )}
-
-        </div>
-        </Route>
-        <Route path={`${path}:id`}>
-        <FilterItem/>
-        </Route>
-      </Switch>
-            
-        </div>*/
     )
 }
 export default ProductList;
