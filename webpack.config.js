@@ -5,8 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
-    mode:'production',
-
+    mode:"production",
+    watch: true,
     context: path.resolve(__dirname, 'src'),
 
     entry:["@babel/polyfill",'./index.jsx'],
@@ -24,8 +24,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
           filename: 'styles.css'
-        })
-        
+        })      
     ],
     devtool: 'development' ? 'source-map' : '',
     module: {
