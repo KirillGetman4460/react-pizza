@@ -6,10 +6,8 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "serve": "webpack serve",
-    "nodemon-server": "nodemon server.js",
     "server": "node server.js",
     "json-server": "json-server --watch product.json --port=3001",
-    "node": "node server.js"
   },
   "repository": {
     "type": "git",

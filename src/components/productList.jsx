@@ -50,12 +50,17 @@ const ProductList = () => {
         getPosts();
     },[])
     useEffect(() =>{
-        choiceOptions === 'по цене' ? sortPrice(): null
-
-        choiceOptions === "по алфавиту" ? sortAlphabet(): null
-
-        choiceOptions === 'популярности' ? sortRating(): null
-
+        switch(choiceOptions){
+            case 'по цене':
+                sortPrice()
+                break;
+            case 'по алфавиту':
+                sortAlphabet()
+                break;
+            case 'популярности':
+                sortRating()
+                break;
+        }
     },[choiceOptions])
 
     return(
